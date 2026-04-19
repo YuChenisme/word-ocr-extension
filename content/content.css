@@ -1,0 +1,136 @@
+/* 所有元素都加 data-ocr-ext 屬性，避免與頁面 CSS 衝突 */
+
+#ocr-ext-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.35);
+  cursor: crosshair;
+  z-index: 2147483646;
+  user-select: none;
+}
+
+#ocr-ext-selection {
+  position: fixed;
+  border: 2px dashed #4a90e2;
+  background: rgba(74, 144, 226, 0.12);
+  z-index: 2147483647;
+  pointer-events: none;
+  box-shadow: 0 0 0 9999px rgba(0, 0, 0, 0.35);
+}
+
+#ocr-ext-hint {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(0, 0, 0, 0.78);
+  color: white;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-family: -apple-system, 'Microsoft JhengHei', sans-serif;
+  z-index: 2147483647;
+  pointer-events: none;
+}
+
+#ocr-ext-bubble {
+  position: fixed;
+  background: white;
+  color: #222;
+  border-radius: 10px;
+  padding: 14px 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  font-family: -apple-system, 'Microsoft JhengHei', sans-serif;
+  font-size: 13px;
+  z-index: 2147483647;
+  max-width: 320px;
+  min-width: 220px;
+  line-height: 1.5;
+  animation: ocr-ext-fadein 0.15s ease-out;
+}
+
+@keyframes ocr-ext-fadein {
+  from { opacity: 0; transform: translateY(-4px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+#ocr-ext-bubble .word {
+  font-size: 18px;
+  font-weight: 600;
+  color: #222;
+  margin-bottom: 4px;
+}
+
+#ocr-ext-bubble .pos {
+  display: inline-block;
+  background: #eef3fb;
+  color: #4a90e2;
+  font-size: 11px;
+  padding: 2px 7px;
+  border-radius: 4px;
+  margin-right: 6px;
+  vertical-align: middle;
+}
+
+#ocr-ext-bubble .translation {
+  color: #444;
+  font-size: 14px;
+  margin-bottom: 8px;
+}
+
+#ocr-ext-bubble .example {
+  font-size: 12px;
+  color: #666;
+  border-top: 1px solid #f0f0f0;
+  padding-top: 8px;
+  margin-top: 8px;
+}
+
+#ocr-ext-bubble .example-en { font-style: italic; }
+#ocr-ext-bubble .example-zh { margin-top: 2px; color: #888; }
+
+#ocr-ext-bubble .close {
+  position: absolute;
+  top: 6px;
+  right: 10px;
+  background: transparent;
+  border: none;
+  font-size: 16px;
+  color: #aaa;
+  cursor: pointer;
+  padding: 2px 6px;
+}
+#ocr-ext-bubble .close:hover { color: #444; }
+
+#ocr-ext-bubble .status {
+  font-size: 12px;
+  color: #888;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+#ocr-ext-bubble .error { color: #c62828; }
+#ocr-ext-bubble .link {
+  color: #4a90e2;
+  text-decoration: underline;
+  cursor: pointer;
+  background: none;
+  border: none;
+  padding: 0;
+  font-size: inherit;
+  font-family: inherit;
+}
+
+#ocr-ext-bubble .spinner {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  border: 2px solid #ddd;
+  border-top-color: #4a90e2;
+  border-radius: 50%;
+  animation: ocr-ext-spin 0.8s linear infinite;
+}
+@keyframes ocr-ext-spin { to { transform: rotate(360deg); } }

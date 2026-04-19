@@ -1,0 +1,17 @@
+# macOS
+.DS_Store
+
+# 編輯器 / IDE
+.vscode/
+.idea/
+*.swp
+
+# Claude Code 本機設定（個人偏好，不該進版控）
+.claude/settings.local.json
+
+# 不再使用的 Tesseract.js 檔案（~9MB，純本機存放）
+lib/tesseract/
+
+# Node（若未來加入 build 工具）
+node_modules/
+dist/

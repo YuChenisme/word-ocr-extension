@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <title>我的單字卡 - 英文單字 OCR 速查</title>
+  <link rel="stylesheet" href="wordlist.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="inner">
+      <h1>📚 我的單字卡</h1>
+      <div class="meta">
+        <span id="count">0 個單字</span>
+        <input id="search" type="search" placeholder="搜尋單字或中文...">
+      </div>
+    </div>
+  </header>
+
+  <main id="grid" class="grid">
+    <!-- 卡片由 JS 渲染 -->
+  </main>
+
+  <template id="card-tpl">
+    <article class="card">
+      <div class="card-head">
+        <h2 class="word"></h2>
+        <span class="pos"></span>
+      </div>
+      <div class="translation"></div>
+      <div class="example">
+        <div class="example-en"></div>
+        <div class="example-zh"></div>
+      </div>
+      <div class="card-actions">
+        <button class="btn-speak" title="發音">🔊 發音</button>
+        <button class="btn-delete" title="刪除">🗑 刪除</button>
+      </div>
+    </article>
+  </template>
+
+  <div id="empty" class="empty" hidden>
+    <p>🌱 還沒有收錄單字</p>
+    <p class="sub">到任何英文網頁，按 <kbd>⌘⇧O</kbd> 或右鍵選單開始框選單字吧！</p>
+  </div>
+
+  <script src="../services/storage.js"></script>
+  <script src="wordlist.js"></script>
+</body>
+</html>

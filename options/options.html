@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <title>設定 - 英文單字 OCR 速查</title>
+  <link rel="stylesheet" href="options.css">
+</head>
+<body>
+  <div class="container">
+    <h1>設定</h1>
+
+    <section class="card">
+      <label for="api-key">Gemini API Key</label>
+      <p class="desc">用於中文翻譯、詞性判斷、以及 AI 例句生成。Key 僅存於你的瀏覽器本機。</p>
+      <div class="input-row">
+        <input id="api-key" type="password" placeholder="AIza..." autocomplete="off">
+        <button id="toggle-visibility" type="button" class="btn-ghost" title="顯示/隱藏">👁</button>
+      </div>
+
+      <div class="actions">
+        <button id="save" class="btn btn-primary">儲存</button>
+        <button id="test" class="btn btn-secondary">測試連線</button>
+      </div>
+
+      <p id="status" class="status"></p>
+    </section>
+
+    <section class="card help">
+      <h2>如何取得 Gemini API Key？</h2>
+      <ol>
+        <li>前往 <a href="https://aistudio.google.com/app/apikey" target="_blank" rel="noreferrer">Google AI Studio - API Keys</a>（需登入 Google 帳號）</li>
+        <li>點 <b>Create API key</b>，複製字串（以 <code>AIza</code> 開頭）</li>
+        <li>貼上方，按「儲存」</li>
+      </ol>
+      <p class="desc">預設使用 <code>gemini-2.5-flash</code> 模型，有免費額度，適合個人使用。</p>
+    </section>
+  </div>
+
+  <script src="../services/storage.js"></script>
+  <script src="../services/gemini.js"></script>
+  <script src="options.js"></script>
+</body>
+</html>
