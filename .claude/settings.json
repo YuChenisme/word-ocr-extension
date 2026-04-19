@@ -4,7 +4,21 @@
       "Bash(gunzip -f eng.traineddata.gz)",
       "Bash(node -e ' *)",
       "Bash(git init *)",
-      "Bash(git add *)"
+      "Bash(git add *)",
+      "Bash(git commit -m ' *)",
+      "Bash(gh --version)",
+      "Bash(brew --version)",
+      "Bash(brew install *)",
+      "Bash(gh repo *)",
+      "Bash(git push *)",
+      "Bash(git config *)",
+      "Bash(git filter-branch -f --env-filter ' *)",
+      "Bash(git stash *)",
+      "Bash(git fetch *)",
+      "Bash(gh api *)"
+    ],
+    "additionalDirectories": [
+      "/Users/yuchen/Desktop/claude 學習/文字辨識功能工具/.claude"
     ]
   }
 }
